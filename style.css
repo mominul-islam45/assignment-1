@@ -429,17 +429,9 @@ body{
 /* ======== Footer section end ======== */
 
 
-/* @media (max-width: 1310px) {
-    .buy-sell-sec{
-        flex-direction: column;
-        align-items: center;
 
-        & .buy-sell{
-            max-width: 100%;
-            width: 90%;
-        }
-    }
-} */
+
+
 
 /* ====== Laptop view ====== */
 
@@ -530,5 +522,11 @@ body{
 
     .sign-up h1{
         font-size: 40px;
+    }
+
+    .footer{
+        & .footer-links{
+            margin-left: 60px;
+        }
     }
 }
