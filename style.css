@@ -8,6 +8,16 @@ body{
     width: 100vw;
 }
 
+:root{
+    --white-clr: #fff;
+    --black-clr: #000;
+    --teal-clr: #00ebc7;
+    --light-gray-clr: #ECECEc;
+    --light-gray-2: #f8f8f8;
+    --yellow-orange-clr: #FDE24F;
+    --light-violet-clr: #CFBAFF;
+}
+
 
 /* ======== Nav section start ======== */
 
@@ -48,15 +58,15 @@ body{
             font-weight: 500;
             font-size: 22px;
             border: none;
-            background-color: #f1f1f1;
+            background-color: var(--light-gray-clr);
             border-radius: 30px;
             padding: 11px 28px;
             cursor: pointer;
         }
 
         .get-start-btn{
-            background-color: #000;
-            color: white;
+            background-color: var(--black-clr);
+            color: var(--white-clr);
         }
         img{
             cursor: pointer;
@@ -81,13 +91,13 @@ body{
     & .offer{
         max-width: 1160px;
         width: 80%;
-        background-color: #fff;
+        background-color: var(--white-clr);
         margin: 0 auto;
         position: relative;
         top: 193px;
         border-radius: 10px;
-        border: 1px solid black;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+        border: 1px solid var(--black-clr);
+        box-shadow: 0 0 30px rgba(from var(--black-clr) r g b /0.4);
 
         & .offer-title{
             font-size: 45px;
@@ -112,7 +122,7 @@ body{
             }
 
             div:not(:nth-child(6)){
-                background-color: #ECECEC;
+                background-color: var(--light-gray-clr);
                 border-radius: 8px;
                 width: 100%;
                 height: 100%;
@@ -121,35 +131,41 @@ body{
                 justify-content: center;
             }
 
-            label, input{
+            input{
                 font-size: 20px;
                 font-weight: 500;
+                outline: none;
+                border: none;
+                background-color: transparent;
+
+                &::placeholder {
+                    color: var(--black-clr);
+                    font-weight: 500;
+                    font-size: 20px;
+                    text-align: center;
+                }
+                &::-webkit-inner-spin-button{
+                    display: none;
+                }
             }
             select{
                 outline: none;
                 border: none;
                 background-color: transparent;
-                font-size: 1rem;
+                font-size: 20px;
                 font-weight: 500;
                 cursor: pointer;
+                width: 80%;
+                padding: 0 10px;
+                /* appearance: none; */
+                
             }
-            input{
-                outline: none;
-                border: none;
-                background-color: transparent;
-            }
-            ::placeholder {
-                color: black;
-                opacity: 1; /* Firefox */
-                font-weight: 500;
-                font-size: 20px;
-                text-align: center;
-            }
+
             & button{
                 font-size: 20px;
                 font-weight: 600;
                 border: none;
-                background-color: #00EBC7;
+                background-color: var(--teal-clr);
                 height: 100%;
                 width: 100%;
                 border-radius: 30px;
@@ -168,8 +184,8 @@ body{
         font-size: 20px;
         padding: 11px 28px;
         border-radius: 30px;
-        color: white;
-        border: 1.5px solid white;
+        color: var(--white-clr);
+        border: 1.5px solid var(--white-clr);
         text-decoration: underline;
         text-underline-offset: 5px;
         text-decoration-thickness: 1.5px;
@@ -183,9 +199,9 @@ body{
 .crypto-logos{
     width: 100%;
     height: 370px;
-    background-color: #FDE24F;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    background-color: var(--yellow-orange-clr);
+    border-top: 1px solid var(--black-clr);
+    border-bottom: 1px solid var(--black-clr);
 
     & div{
         max-width: 1220px;
@@ -254,18 +270,19 @@ body{
                 p{
                     font-size: 20px;
                     font-weight: 400;
-                    color: #535353;
+                    color: var(--black-clr);
+                    opacity: 0.7;
                     padding-bottom: 30px;
                 }
                 a{
                     font-size: 16px;
                     font-weight: 600;
-                    color: #161616;
+                    color: var(--black-clr);
                     cursor: pointer;
                 }
             }
             .hr-line{
-                border-top: 1px solid black;
+                border-top: 1px solid var(--black-clr);
                 width: 20%;
                 margin: 20px 10px 0 10px;
             }
@@ -273,7 +290,7 @@ body{
     }
     .features-btn{
         outline: none;
-        border: 1.5px solid black;
+        border: 1.5px solid var(--black-clr);
         padding: 11px 28px;
         border-radius: 30px;
         font-size: 20px;
@@ -290,9 +307,9 @@ body{
 .buy-sell-sec{
     width: 100%;
     height: auto;
-    background-color: #f8f8f8;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    background-color: var(--light-gray-2);
+    border-top: 1px solid var(--black-clr);
+    border-bottom: 1px solid var(--black-clr);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -308,9 +325,9 @@ body{
             padding-bottom: 20px;
         }
         .buy-sell-item{
-            background-color: #fff;
+            background-color: var(--white-clr);
             padding: 20px;
-            border: 1px solid black;
+            border: 1px solid var(--black-clr);
             border-radius: 15px;
             display: flex;
             flex-wrap: wrap;
@@ -337,17 +354,17 @@ body{
             display: block;
             margin: 30px auto 0;
             padding: 11px 28px;
-            background-color: black;
+            background-color: var(--black-clr);
             border: none;
             border-radius: 15px;
-            color: white;
+            color: var(--white-clr);
             font-size: 20px;
             font-weight: 500;
             cursor: pointer;
         }
     }
     .border-vr{
-        border-left: 1px solid black;
+        border-left: 1px solid var(--black-clr);
     }
 }
 /* ======== Buy-sell section end ======== */
@@ -356,7 +373,7 @@ body{
 /* ======== Sign up section start ======== */
 .sign-up{
     width: 100%;
-    background-color: #CFBAFF;
+    background-color: var(--light-violet-clr);
     padding: 70px 0 50px 0;
 
     & h1{
@@ -373,8 +390,8 @@ body{
         padding: 15px 45px;
         border: none;
         border-radius: 30px;
-        background-color: black;
-        color: white;
+        background-color: var(--black-clr);
+        color: var(--white-clr);
         font-size: 32px;
         font-weight: 500;
         margin-top: 70px;
@@ -387,8 +404,8 @@ body{
 /* ======== Footer section start ======== */
 .footer{
     width: 100%;
-    background-color: black;
-    color: white;
+    background-color: var(--black-clr);
+    color: var(--white-clr);
     padding-top: 60px;
 
     & .footer-links{
@@ -409,11 +426,16 @@ body{
             font-weight: 500;
             margin: 10px 0;
             cursor: pointer;
+            opacity: 0.7;
+
+            &:hover{
+                opacity: 1;
+            }
         }
     }
     .foot-border{
         width: 100%;
-        border-top: 1px solid white;
+        border-top: 1px solid var(--white-clr);
     }
     .copyright{
         max-width: 1300px;
